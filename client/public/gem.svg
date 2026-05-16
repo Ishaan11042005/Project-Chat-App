@@ -1,0 +1,16 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" rx="72" fill="#936EFF"/>
+  <polygon points="150,50 218,82 246,150 218,218 150,250 82,218 54,150 82,82" fill="none" stroke="white" stroke-width="10"/>
+  <polygon points="150,50 218,82 150,130 82,82" fill="white" fill-opacity="0.35"/>
+  <polygon points="150,130 218,82 246,150 218,218 150,130" fill="white" fill-opacity="0.15"/>
+  <polygon points="150,130 82,82 54,150 82,218 150,130" fill="white" fill-opacity="0.08"/>
+  <polygon points="150,130 218,218 150,250 82,218" fill="white" fill-opacity="0.20"/>
+  <line x1="150" y1="50" x2="150" y2="130" stroke="white" stroke-width="3" stroke-opacity="0.6"/>
+  <line x1="218" y1="82" x2="150" y2="130" stroke="white" stroke-width="3" stroke-opacity="0.6"/>
+  <line x1="82" y1="82" x2="150" y2="130" stroke="white" stroke-width="3" stroke-opacity="0.6"/>
+  <line x1="246" y1="150" x2="150" y2="130" stroke="white" stroke-width="3" stroke-opacity="0.6"/>
+  <line x1="54" y1="150" x2="150" y2="130" stroke="white" stroke-width="3" stroke-opacity="0.6"/>
+  <line x1="218" y1="218" x2="150" y2="130" stroke="white" stroke-width="3" stroke-opacity="0.6"/>
+  <line x1="82" y1="218" x2="150" y2="130" stroke="white" stroke-width="3" stroke-opacity="0.6"/>
+  <line x1="150" y1="250" x2="150" y2="130" stroke="white" stroke-width="3" stroke-opacity="0.6"/>
+</svg>
