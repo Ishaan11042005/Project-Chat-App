@@ -30,7 +30,6 @@ const Sidebar = ({selectedUser,setSelectedUser}) => {
           </div> 
 
       </div>
-
       <div className='flex flex-col'>
          {userDummyData.map((user,index)=>(
           <div onClick={()=>{setSelectedUser(user)}}
