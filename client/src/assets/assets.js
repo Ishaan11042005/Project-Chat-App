@@ -35,7 +35,11 @@ const assets = {
     arrow_icon,
     code,
     bgImage,
-    profile_martin
+    profile_martin,
+    profile_richard,  // ← ADDED
+    profile_alison,   // ← ADDED
+    profile_enrique,  // ← ADDED
+    profile_marco,    // ← ADDED
 }
 
 export default assets;

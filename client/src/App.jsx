@@ -1,11 +1,12 @@
 import React from 'react'
-import {Route,Routes} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import LoginPage from './pages/LoginPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import ProfilePage from './pages/ProfilePage.jsx'
+
 const App = () => {
   return (
-<div className="bg-[url('./src/assets/bgImage.svg')] bg-cover bg-center min-h-screen">
+    <div className="min-h-screen">
       <Routes>
         <Route path='/' element={<HomePage />}/>
         <Route path='/login' element={<LoginPage />}/>
