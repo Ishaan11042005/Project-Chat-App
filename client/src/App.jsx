@@ -3,7 +3,6 @@ import {Route, Routes} from 'react-router-dom'
 import LoginPage from './pages/LoginPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import ProfilePage from './pages/ProfilePage.jsx'
-/*hello*/
 const App = () => {
   return (
     <div className="min-h-screen">
