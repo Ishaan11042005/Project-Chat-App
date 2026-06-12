@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react';
 import assets, { messagesDummyData } from '../assets/assets'
 import { formatMessageTime } from '../lib/utils';
 
