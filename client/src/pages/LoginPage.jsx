@@ -19,9 +19,9 @@ const LoginPage = () => {
       setIsDataSubmitted(true);
       return;
     }
-    login(currState==="Sign Up"? 'signup':'login',{fullName,email,password,bio})
+    login(currState==="Sign up"? 'signup':'login',{fullName,email,password,bio})
   };
-  
+
   return (
     <div className='min-h-screen flex items-center justify-center bg-cover bg-center gap-8 
     sm:justify-evenly max-sm:flex-col backdrop-blur-2xl'>
