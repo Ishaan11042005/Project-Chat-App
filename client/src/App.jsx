@@ -1,15 +1,20 @@
-import React from 'react'
-import {Route, Routes} from 'react-router-dom'
+import React, { useContext } from 'react'
+import {Navigate, Route, Routes} from 'react-router-dom'
 import LoginPage from './pages/LoginPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import ProfilePage from './pages/ProfilePage.jsx'
+import {Toaster} from 'react-hot-toast'
+import { AuthContext } from '../context/AuthContext.jsx'
+
 const App = () => {
+  const {authUser}=useContext(AuthContext)
   return (
     <div className="min-h-screen">
+      <Toaster/>
       <Routes>
-        <Route path='/' element={<HomePage />}/>
-        <Route path='/login' element={<LoginPage />}/>
-        <Route path='/profile' element={<ProfilePage />}/>
+        <Route path='/' element={authUser ? <HomePage /> :<Navigate to="/login" />}/>
+        <Route path='/login' element={!authUser ? <LoginPage /> : <Navigate to="/login" />}/>
+        <Route path='/profile' element={authUser ? <ProfilePage />:<Navigate to="/login" />}/>
       </Routes>
     </div>
   )
