@@ -6,7 +6,7 @@ import cloudinary from "../lib/cloudinary.js";
 
 
 export const signup = async (req, res) => {
-    const {email, fullName, password, bio} = req.body;  // ← ADDED bio
+    const {email, fullName, password, bio} = req.body; 
     try {
         if(!fullName || !email || !password || !bio){
             return res.json({success:false, message:"All fields are required"});
@@ -37,7 +37,7 @@ export const login = async (req, res) => {
         const {email, password} = req.body;
         const userData = await User.findOne({email});
 
-        if(!userData){   // ← ADDED null check
+        if(!userData){   
             return res.json({success:false, message:"User not found"});
         }
 
@@ -70,13 +70,13 @@ export const updateProfile = async (req, res) => {
         let updatedUser;
 
         if(!profilePic){
-            updatedUser = await User.findByIdAndUpdate(userId, {bio, fullName}, {new:true});  // ← ADDED updatedUser =
+            updatedUser = await User.findByIdAndUpdate(userId, {bio, fullName}, {new:true});
         }
         else{
             const upload = await cloudinary.uploader.upload(profilePic);
             updatedUser = await User.findByIdAndUpdate(userId, {profilePic:upload.secure_url, bio, fullName}, {new:true});
         }
-        res.json({success:true, user:updatedUser});
+        res.json({success:true, userData:updatedUser});
     } catch (error) {
         console.log(error.message);
         res.json({success:false, message:error.message});

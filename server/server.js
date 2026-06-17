@@ -17,7 +17,7 @@ export const io = new Server(server, {
 });
 
 // Store online users
-export const userSocketMap = {};  // ← FIXED: useSocketMap → userSocketMap
+export const userSocketMap = {}; 
 
 // Socket.io connection handler
 io.on("connection", (socket) => {
@@ -25,14 +25,14 @@ io.on("connection", (socket) => {
     console.log("User connected", userId);
 
     if (userId) {
-        userSocketMap[userId] = socket.id;  // ← FIXED
+        userSocketMap[userId] = socket.id;  
     }
 
     io.emit("getOnlineUsers", Object.keys(userSocketMap));  // ← FIXED event name
 
     socket.on("disconnect", () => {
         console.log("User disconnected", userId);
-        delete userSocketMap[userId];  // ← FIXED
+        delete userSocketMap[userId]; 
         io.emit("getOnlineUsers", Object.keys(userSocketMap));  // ← FIXED event name
     });
 });
