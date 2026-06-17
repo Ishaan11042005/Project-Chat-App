@@ -1,18 +1,16 @@
 import { useState } from "react";
 import { useContext } from "react";
-import { Children } from "react";
 import { createContext } from "react";
 import { AuthContext } from "./AuthContext";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
-import { sendMessage } from "../../server/controllers/messageControllers";
 
 export const ChatContext=createContext();
 
-export const ChatProvider=()=>{
+export const ChatProvider=({children})=>{
 
     const [messages,setMessages]=useState([]);
-    const [userSocketMap,setUsers]=useState([]);
+    const [users,setUsers]=useState([]);
     const [selectedUser,setSelectedUser]=useState(null);
     const [unseenMessages,setUnseenMessages]=useState({});
     const {socket,axios}=useContext(AuthContext);
@@ -21,7 +19,7 @@ export const ChatProvider=()=>{
         try {
             const {data}=await axios.get("/api/messages/users");
             if(data.success){
-                setUsers(data.Users)
+                setUsers(data.users)
                 setUnseenMessages(data.unseenMessages)
             }
         } catch (error) {
@@ -34,7 +32,7 @@ export const ChatProvider=()=>{
         try {
             const {data}=await axios.get(`/api/messages/${userId}`);
             if(data.success){
-                setMessages(data.message);
+                setMessages(data.messages);
             }
         } catch (error) {
             toast.error(error.message)
@@ -89,13 +87,12 @@ export const ChatProvider=()=>{
     },[socket,selectedUser])
 
     const value={
-        messages,Users,selectedUser,getUsers,setMessages,sendMessage,setSelectedUser,
+        messages,users,selectedUser,getUsers,getMessages,setMessages,sendMessage,setSelectedUser,
         unseenMessages,setUnseenMessages
     }
-    return 
-    (
+    return (
     <ChatContext.Provider value={value}>
-        {Children}
+        {children}
     </ChatContext.Provider>
     )
 }
