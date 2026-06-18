@@ -13,7 +13,7 @@ const {getUsers,users,selectedUser,
 
 const {logout,onlineUsers}=useContext(AuthContext);
 
-const [input,setInput]=useState(false);
+const [input,setInput]=useState('');
 
 const filteredUsers=input ? users.filter((user)=>user.fullName.toLowerCase().includes(input.toLowerCase())):users
 
