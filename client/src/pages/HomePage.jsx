@@ -5,8 +5,7 @@ import RightSidebar from '../components/RightSidebar.jsx'
 import { ChatContext } from '../../context/ChatContext.jsx'
 
 const HomePage = () => {
-  const { selectedUser, setSelectedUser } = useContext(ChatContext);
-
+  const { selectedUser } = useContext(ChatContext);
   return (
     <div className='border w-full h-screen sm:px-[15%] sm:py-[5%] box-border'>
       <div
@@ -18,8 +17,8 @@ const HomePage = () => {
         }`}
       >
         <Sidebar/>
-        <ChatContainer selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
-        <RightSidebar selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
+        <ChatContainer />
+        <RightSidebar />
       </div>
     </div>
   )
